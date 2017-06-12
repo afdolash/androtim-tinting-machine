@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Androtim</string>
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Apa Androtim ?</string>
+    <string name="slide_1_desc">Android Tinting Machine, sebuah aplikasi yang digunakan untuk mempermudah pencampuran cat.</string>
+
+    <string name="slide_2_title">Bluetooth</string>
+    <string name="slide_2_desc">Menggunakan konektivitas bluetooth, sehingga dapat terkoneksi dalam jarak tertentu.</string>
+
+    <string name="slide_3_title">Interaktif</string>
+    <string name="slide_3_desc">Tersedia berbagai warna yang dapat dipilih oleh para pengguna.</string>
+
+</resources>
