@@ -38,6 +38,11 @@ public class SplashActivity extends AppCompatActivity {
         }, 3000);
     }
 
+    @Override
+    public void onBackPressed() {
+        // Back button cant to be pressed
+    }
+
     /**
      * Making notification bar transparent
      */

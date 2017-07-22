@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!A@");
+                Toast.makeText(MainActivity.this, "Abu-abu", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!B@");
+                Toast.makeText(MainActivity.this, "Biru", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -98,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!C@");
+                Toast.makeText(MainActivity.this, "Biru Muda", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -105,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!D@");
+                Toast.makeText(MainActivity.this, "Coklat Muda", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -112,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!E@");
+                Toast.makeText(MainActivity.this, "Hijau", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -119,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!F@");
+                Toast.makeText(MainActivity.this, "Hijau Muda", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -126,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!G@");
+                Toast.makeText(MainActivity.this, "Kuning", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -133,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!H@");
+                Toast.makeText(MainActivity.this, "Kuning Muda", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -140,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!I@");
+                Toast.makeText(MainActivity.this, "Magenta Tua", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -147,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!J@");
+                Toast.makeText(MainActivity.this, "Merah", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -154,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!K@");
+                Toast.makeText(MainActivity.this, "Merah Muda", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -161,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!L@");
+                Toast.makeText(MainActivity.this, "Orange", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -168,6 +180,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!M@");
+                Toast.makeText(MainActivity.this, "Orange Merah", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -175,6 +188,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!N@");
+                Toast.makeText(MainActivity.this, "Tosca", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -182,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!O@");
+                Toast.makeText(MainActivity.this, "Ungu", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -189,6 +204,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendData("!P@");
+                Toast.makeText(MainActivity.this, "Ungu Tua", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -242,6 +258,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             mOutStream.close();
             mBtSocket.close();
+            sendData("Y");
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
