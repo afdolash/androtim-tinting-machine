@@ -4,14 +4,14 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -25,14 +25,20 @@ import java.util.UUID;
 public class MainActivity extends AppCompatActivity {
 
     // Relative layout tint
-    private RelativeLayout tint_abu, tint_biru, tint_biruMuda, tint_coklatMuda,tint_hijau,
-            tint_hijauMuda, tint_kuning, tint_kuningMuda, tint_magentaTua, tint_merah,
-            tint_merahMuda, tint_orange, tint_orangeMerah, tint_tosca, tint_ungu, tint_unguTua;
+    private RelativeLayout tint_redCrimson, tint_darkOrange, tint_deepPink,
+            tint_orange, tint_carrot, tint_blueCobalt,
+            tint_skylight, tint_indigo, tint_purple,
+            tint_darkMagenta, tint_peanut, tint_yellowCanary,
+            tint_lightYellow, tint_greenPine, tint_emeraldGreen,
+            tint_greenOcean;
 
     // Member fields
     private BluetoothAdapter mBtAdapter = null;
     private BluetoothSocket mBtSocket = null;
     private OutputStream mOutStream = null;
+
+    //  Double back to exit
+    boolean doubleBackToExit = false;
 
     // UUID service - This is the type of Bluetooth device that the BT module is
     // It is very likely yours will be the same, if not google UUID for your manufacturer
@@ -44,32 +50,29 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.container_main);
 
-        // Making notification bar transparent
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
-
-        changeStatusBarColor();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         // Initialize tint variables
-        tint_abu = (RelativeLayout) findViewById(R.id.tint_abu);
-        tint_biru = (RelativeLayout) findViewById(R.id.tint_biru);
-        tint_biruMuda = (RelativeLayout) findViewById(R.id.tint_biruMuda);
-        tint_coklatMuda = (RelativeLayout) findViewById(R.id.tint_coklatMuda);
-        tint_hijau = (RelativeLayout) findViewById(R.id.tint_hijau);
-        tint_hijauMuda = (RelativeLayout) findViewById(R.id.tint_hijauMuda);
-        tint_kuning = (RelativeLayout) findViewById(R.id.tint_kuning);
-        tint_kuningMuda = (RelativeLayout) findViewById(R.id.tint_kuningMuda);
-        tint_magentaTua = (RelativeLayout) findViewById(R.id.tint_magentaTua);
-        tint_merah = (RelativeLayout) findViewById(R.id.tint_merah);
-        tint_merahMuda = (RelativeLayout) findViewById(R.id.tint_merahMuda);
+        tint_blueCobalt = (RelativeLayout) findViewById(R.id.tint_blueCobalt);
+        tint_carrot = (RelativeLayout) findViewById(R.id.tint_carrot);
+        tint_darkMagenta = (RelativeLayout) findViewById(R.id.tint_darkMagenta);
+        tint_darkOrange = (RelativeLayout) findViewById(R.id.tint_darkOrange);
+        tint_deepPink = (RelativeLayout) findViewById(R.id.tint_deepPink);
+        tint_emeraldGreen = (RelativeLayout) findViewById(R.id.tint_emeraldGreen);
+        tint_greenOcean = (RelativeLayout) findViewById(R.id.tint_greenOcean);
+        tint_greenPine = (RelativeLayout) findViewById(R.id.tint_greenPine);
+        tint_indigo = (RelativeLayout) findViewById(R.id.tint_indigo);
+        tint_lightYellow = (RelativeLayout) findViewById(R.id.tint_lightYellow);
         tint_orange = (RelativeLayout) findViewById(R.id.tint_orange);
-        tint_orangeMerah = (RelativeLayout) findViewById(R.id.tint_orangeMerah);
-        tint_tosca = (RelativeLayout) findViewById(R.id.tint_tosca);
-        tint_ungu = (RelativeLayout) findViewById(R.id.tint_ungu);
-        tint_unguTua = (RelativeLayout) findViewById(R.id.tint_unguTua);
+        tint_peanut = (RelativeLayout) findViewById(R.id.tint_peanut);
+        tint_purple = (RelativeLayout) findViewById(R.id.tint_purple);
+        tint_redCrimson = (RelativeLayout) findViewById(R.id.tint_redCrimson);
+        tint_skylight = (RelativeLayout) findViewById(R.id.tint_skylight);
+        tint_yellowCanary = (RelativeLayout) findViewById(R.id.tint_yellowCanary);
 
         //getting the bluetooth adapter value and calling checkBTstate function
         mBtAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -80,133 +83,160 @@ public class MainActivity extends AppCompatActivity {
          *  In this case send data is called with a value and a toast is made
          *  to give visual feedback of the selection made
          */
-        tint_abu.setOnClickListener(new View.OnClickListener() {
+        tint_redCrimson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendData("!A@");
-                Toast.makeText(MainActivity.this, "Abu-abu", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Red Crimson", Toast.LENGTH_SHORT).show();
             }
         });
 
-        tint_biru.setOnClickListener(new View.OnClickListener() {
+        tint_darkOrange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendData("!B@");
-                Toast.makeText(MainActivity.this, "Biru", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Dark Orange", Toast.LENGTH_SHORT).show();
             }
         });
 
-        tint_biruMuda.setOnClickListener(new View.OnClickListener() {
+        tint_deepPink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendData("!C@");
-                Toast.makeText(MainActivity.this, "Biru Muda", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        tint_coklatMuda.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendData("!D@");
-                Toast.makeText(MainActivity.this, "Coklat Muda", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        tint_hijau.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendData("!E@");
-                Toast.makeText(MainActivity.this, "Hijau", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        tint_hijauMuda.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendData("!F@");
-                Toast.makeText(MainActivity.this, "Hijau Muda", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        tint_kuning.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendData("!G@");
-                Toast.makeText(MainActivity.this, "Kuning", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        tint_kuningMuda.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendData("!H@");
-                Toast.makeText(MainActivity.this, "Kuning Muda", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        tint_magentaTua.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendData("!I@");
-                Toast.makeText(MainActivity.this, "Magenta Tua", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        tint_merah.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendData("!J@");
-                Toast.makeText(MainActivity.this, "Merah", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        tint_merahMuda.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendData("!K@");
-                Toast.makeText(MainActivity.this, "Merah Muda", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Deep  Pink", Toast.LENGTH_SHORT).show();
             }
         });
 
         tint_orange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendData("!L@");
+                sendData("!D@");
                 Toast.makeText(MainActivity.this, "Orange", Toast.LENGTH_SHORT).show();
             }
         });
 
-        tint_orangeMerah.setOnClickListener(new View.OnClickListener() {
+        tint_carrot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendData("!E@");
+                Toast.makeText(MainActivity.this, "Carrot", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        tint_blueCobalt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendData("!F@");
+                Toast.makeText(MainActivity.this, "Blue Cobalt", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        tint_skylight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendData("!G@");
+                Toast.makeText(MainActivity.this, "Skylight", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        tint_indigo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendData("!H@");
+                Toast.makeText(MainActivity.this, "Indigo", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        tint_purple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendData("!I@");
+                Toast.makeText(MainActivity.this, "Purple", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        tint_darkMagenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendData("!J@");
+                Toast.makeText(MainActivity.this, "Dark Magenta", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        tint_peanut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendData("!K@");
+                Toast.makeText(MainActivity.this, "Peanut", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        tint_yellowCanary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendData("!L@");
+                Toast.makeText(MainActivity.this, "Yellow Canary", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        tint_lightYellow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendData("!M@");
-                Toast.makeText(MainActivity.this, "Orange Merah", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Light Yellow", Toast.LENGTH_SHORT).show();
             }
         });
 
-        tint_tosca.setOnClickListener(new View.OnClickListener() {
+        tint_greenPine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendData("!N@");
-                Toast.makeText(MainActivity.this, "Tosca", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Green Pine", Toast.LENGTH_SHORT).show();
             }
         });
 
-        tint_ungu.setOnClickListener(new View.OnClickListener() {
+        tint_emeraldGreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendData("!O@");
-                Toast.makeText(MainActivity.this, "Ungu", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Emerald Green", Toast.LENGTH_SHORT).show();
             }
         });
 
-        tint_unguTua.setOnClickListener(new View.OnClickListener() {
+        tint_greenOcean.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendData("!P@");
-                Toast.makeText(MainActivity.this, "Ungu Tua", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Green Ocean", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExit) {
+            if (sendData("Y")) {
+                super.onBackPressed();
+                try {
+                    mOutStream.close();
+                    mBtSocket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+            return;
+        }
+
+        this.doubleBackToExit = true;
+        Toast.makeText(this, "Please click back again to exit.", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExit = false;
+            }
+        }, 3000);
     }
 
     @Override
@@ -254,11 +284,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
+        sendData("Y");
         try {
             mOutStream.close();
             mBtSocket.close();
-            sendData("Y");
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
@@ -272,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
         //close all connections so resources are not wasted
 
         //Close BT socket to device
-        try     {
+        try {
             mBtSocket.close();
         } catch (IOException e2) {
             Toast.makeText(getBaseContext(), "ERROR - Failed to close Bluetooth socket", Toast.LENGTH_SHORT).show();
@@ -300,27 +329,66 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Method to send data
      */
-    private void sendData(String message) {
+    private boolean sendData(String message) {
         byte[] msgBuffer = message.getBytes();
 
         try {
             //attempt to place data on the outstream to the BT device
             mOutStream.write(msgBuffer);
+            return true;
         } catch (IOException e) {
             //if the sending fails this is most likely because device is no longer there
             Toast.makeText(getBaseContext(), "ERROR - Device not found", Toast.LENGTH_SHORT).show();
             finish();
+            return false;
         }
     }
 
-    /**
-     * Making notification bar transparent
-     */
-    private void changeStatusBarColor() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(Color.TRANSPARENT);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_clearRed:
+                sendData("!1@");
+                Toast.makeText(MainActivity.this, "Kuras cat merah.", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.nav_clearYellow:
+                sendData("!2@");
+                Toast.makeText(MainActivity.this, "Kuras cat kuning.", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.nav_clearBlue:
+                sendData("!3@");
+                Toast.makeText(MainActivity.this, "Kuras cat biru.", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.nav_clearWhite:
+                sendData("!4@");
+                Toast.makeText(MainActivity.this, "Kuras cat putih.", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.nav_calibrateRed:
+                sendData("!6@");
+                Toast.makeText(MainActivity.this, "Kalibrasi cat merah.", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.nav_calibrateYellow:
+                sendData("!7@");
+                Toast.makeText(MainActivity.this, "Kalibrasi cat kuning.", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.nav_calibrateBlue:
+                sendData("!8@");
+                Toast.makeText(MainActivity.this, "Kalibrasi cat biru.", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.nav_calibrateWhite:
+                sendData("!9@");
+                Toast.makeText(MainActivity.this, "Kalibrasi cat putih.", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

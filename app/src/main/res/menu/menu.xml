@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:id="@+id/group"
-        android:checkableBehavior="single">
-        <item android:id="@+id/nav_kurasCat"
-            android:title="Kuras Cat"
-            android:icon="@mipmap/ic_icon"/>
-        <item android:id="@+id/nav_merah"
-            android:title="Kuras Cat"
-            android:icon="@mipmap/ic_icon"/>
-        <item android:id="@+id/nav_biru"
-            android:title="Kuras Cat"
-            android:icon="@mipmap/ic_icon"/>
-    </group>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_clearTint"
+        android:title="Kuras Cat">
+        <menu>
+            <item
+                android:id="@+id/nav_clearRed"
+                android:title="Merah" />
+            <item
+                android:id="@+id/nav_clearYellow"
+                android:title="Kuning" />
+            <item
+                android:id="@+id/nav_clearBlue"
+                android:title="Biru" />
+            <item
+                android:id="@+id/nav_clearWhite"
+                android:title="Putih" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/nav_calibrateTint"
+        android:title="Kalibrasi Cat" >
+        <menu>
+            <item
+                android:id="@+id/nav_calibrateRed"
+                android:title="Merah" />
+            <item
+                android:id="@+id/nav_calibrateYellow"
+                android:title="Kuning" />
+            <item
+                android:id="@+id/nav_calibrateBlue"
+                android:title="Biru" />
+            <item
+                android:id="@+id/nav_calibrateWhite"
+                android:title="Putih" />
+        </menu>
+    </item>
 </menu>

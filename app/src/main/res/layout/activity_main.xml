@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:nestedScrollingEnabled="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.advinity.afdolash.androtim.activity.MainActivity">
 
     <LinearLayout
@@ -11,45 +13,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp">
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/bg_screen3"/>
-
-            <View
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:background="#FFFFFF"
-                android:layout_centerInParent="true"/>
-
-            <View
-                android:layout_width="195dp"
-                android:layout_height="45dp"
-                android:background="@color/bg_screen3"
-                android:layout_centerInParent="true"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="WARNAI DUNIAMU"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                style="@style/Base.TextAppearance.AppCompat.Medium"/>
-
-        </RelativeLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:orientation="horizontal">
 
             <RelativeLayout
-                android:id="@+id/tint_merah"
+                android:id="@+id/tint_redCrimson"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -57,7 +27,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#ff0000"/>
+                    android:background="#D40F12"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -70,25 +40,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Merah"
-                        android:textSize="12sp"
+                        android:text="Red Crimson"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#ff0000"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
 
                 </LinearLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/tint_merahMuda"
+                android:id="@+id/tint_darkOrange"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -96,7 +57,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#f6887e"/>
+                    android:background="#F42722"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -109,22 +70,50 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Merah Muda"
-                        android:textSize="12sp"
+                        android:text="Dark Orange"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#f6887e"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
 
                 </LinearLayout>
 
             </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/tint_deepPink"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#EF4B4A"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Deep Pink"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:orientation="horizontal">
 
             <RelativeLayout
                 android:id="@+id/tint_orange"
@@ -135,7 +124,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#fc5c00"/>
+                    android:background="#EE3423"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -149,17 +138,68 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Orange"
-                        android:textSize="12sp"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/tint_carrot"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#EE6821"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="6dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="#fc5c00"
+                        android:text="Carrot"
                         android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/tint_blueCobalt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#046CCD"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Blue Cobalt"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"/>
 
                 </LinearLayout>
 
@@ -173,7 +213,7 @@
             android:orientation="horizontal">
 
             <RelativeLayout
-                android:id="@+id/tint_orangeMerah"
+                android:id="@+id/tint_skylight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -181,7 +221,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#ff2a00"/>
+                    android:background="#4CD6E8"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -194,25 +234,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Orange Merah"
-                        android:textSize="12sp"
+                        android:text="Skylight"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#ff2a00"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
 
                 </LinearLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/tint_coklatMuda"
+                android:id="@+id/tint_indigo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -220,7 +251,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#f08c09"/>
+                    android:background="#423575"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -233,25 +264,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Coklat Muda"
-                        android:textSize="12sp"
+                        android:text="Indigo"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#f08c09"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
 
                 </LinearLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/tint_hijau"
+                android:id="@+id/tint_purple"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -259,7 +281,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#009914"/>
+                    android:background="#823C6F"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -272,18 +294,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hijau"
-                        android:textSize="12sp"
+                        android:text="Purple"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#009914"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
 
                 </LinearLayout>
 
@@ -297,7 +310,7 @@
             android:orientation="horizontal">
 
             <RelativeLayout
-                android:id="@+id/tint_hijauMuda"
+                android:id="@+id/tint_darkMagenta"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -305,7 +318,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#89a80f"/>
+                    android:background="#6E1836"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -318,25 +331,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hijau Muda"
-                        android:textSize="12sp"
+                        android:text="Dark Magenta"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#89a80f"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
 
                 </LinearLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/tint_tosca"
+                android:id="@+id/tint_peanut"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -344,7 +348,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#06836a"/>
+                    android:background="#814137"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -357,25 +361,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tosca"
-                        android:textSize="12sp"
+                        android:text="Peanut"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#06836a"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
 
                 </LinearLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/tint_kuning"
+                android:id="@+id/tint_yellowCanary"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -383,7 +378,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#fadd27"/>
+                    android:background="#FFE926"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -396,18 +391,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Kuning"
-                        android:textSize="12sp"
+                        android:text="Yellow Canary"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#fadd27"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
 
                 </LinearLayout>
 
@@ -421,7 +407,7 @@
             android:orientation="horizontal">
 
             <RelativeLayout
-                android:id="@+id/tint_kuningMuda"
+                android:id="@+id/tint_lightYellow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -429,7 +415,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#fff478"/>
+                    android:background="#F0F05D"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -442,25 +428,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Kuning Muda"
-                        android:textSize="12sp"
-                        android:textColor="#FFFFFF"
+                        android:text="Light Yellow"
+                        android:textColor="#212121"
                         android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#fff478"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
 
                 </LinearLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/tint_biru"
+                android:id="@+id/tint_greenPine"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -468,7 +445,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#17478a"/>
+                    android:background="#4C9A5C"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -481,25 +458,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Biru"
-                        android:textSize="12sp"
+                        android:text="Green Pine"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#17478a"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
 
                 </LinearLayout>
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/tint_biruMuda"
+                android:id="@+id/tint_emeraldGreen"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -507,7 +475,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#4e8ee6"/>
+                    android:background="#73C246"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -520,142 +488,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Biru Muda"
-                        android:textSize="12sp"
+                        android:text="Emerald Green"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#4e8ee6"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
-
-                </LinearLayout>
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:id="@+id/tint_ungu"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#68376b"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_margin="6dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ungu"
-                        android:textSize="12sp"
-                        android:textColor="#FFFFFF"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#68376b"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
-
-                </LinearLayout>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/tint_unguTua"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#521e8a"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_margin="6dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ungu Tua"
-                        android:textSize="12sp"
-                        android:textColor="#FFFFFF"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#521e8a"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
-
-                </LinearLayout>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/tint_magentaTua"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#8c0a4b"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_margin="6dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Magenta Tua"
-                        android:textSize="12sp"
-                        android:textColor="#FFFFFF"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#8c0a4b"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
 
                 </LinearLayout>
 
@@ -674,42 +509,11 @@
                 android:layout_weight="1"
                 android:visibility="invisible">
 
-                <!--<View-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:background="#68376b"/>-->
-
-                <!--<LinearLayout-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:orientation="vertical"-->
-                    <!--android:layout_centerInParent="true"-->
-                    <!--android:gravity="center"-->
-                    <!--android:layout_margin="12dp">-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:text="Ungu"-->
-                        <!--android:textAlignment="center"-->
-                        <!--android:textColor="#FFFFFF"-->
-                        <!--android:textStyle="bold"/>-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:text="#68376b"-->
-                        <!--android:textAlignment="center"-->
-                        <!--android:textColor="#FFFFFF"-->
-                        <!--android:textSize="10sp"-->
-                        <!--android:textAllCaps="true"/>-->
-
-                <!--</LinearLayout>-->
 
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/tint_abu"
+                android:id="@+id/tint_greenOcean"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -717,7 +521,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#9c9c9c"/>
+                    android:background="#338173"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -730,18 +534,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Abu-abu"
-                        android:textSize="12sp"
+                        android:text="Green Ocean"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="#9c9c9c"
-                        android:textColor="#FFFFFF"
-                        android:textSize="10sp"
-                        android:textAllCaps="true"/>
 
                 </LinearLayout>
 
@@ -753,37 +548,6 @@
                 android:layout_weight="1"
                 android:visibility="invisible">
 
-                <!--<View-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:background="#8c0a4b"/>-->
-
-                <!--<LinearLayout-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:orientation="vertical"-->
-                    <!--android:layout_centerInParent="true"-->
-                    <!--android:gravity="center"-->
-                    <!--android:layout_margin="12dp">-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:text="Magenta Tua"-->
-                        <!--android:textAlignment="center"-->
-                        <!--android:textColor="#FFFFFF"-->
-                        <!--android:textStyle="bold"/>-->
-
-                    <!--<TextView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:text="#8c0a4b"-->
-                        <!--android:textAlignment="center"-->
-                        <!--android:textColor="#FFFFFF"-->
-                        <!--android:textSize="10sp"-->
-                        <!--android:textAllCaps="true"/>-->
-
-                <!--</LinearLayout>-->
 
             </RelativeLayout>
 
